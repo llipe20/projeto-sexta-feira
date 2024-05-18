@@ -3,8 +3,8 @@ import Messeger from "./Msg"
 
 const Login = ({setLogin, setPassword, login, password, GetLogin, color}) => {
     return (
-        <div className="flex justify-center items-center w-full min-h-screen bg-blue-950">
-            <div className="flex flex-col justify-evenly items-center w-1/2 lg:w-1/3 h-96 bg-gray-100 rounded-lg shadow">
+        <div className="flex justify-center items-center w-full min-h-screen lg:bg-blue-950">
+            <div className="flex flex-col justify-evenly items-center w-full lg:w-1/3 h-96 lg:bg-gray-100 rounded-lg lg:shadow">
                 <img src="Logo Discar-08.png" alt="logo-discar" className="w-40" />
                 <form onSubmit={GetLogin} className="flex flex-col justify-center items-center gap-5 w-full">
                     <input 

@@ -46,7 +46,7 @@ function App() {
           {
             !isLogin ? (
                 <Login
-                  password={password} login={login} setLogin={isUser} setPassword={isPass} GetLogin={GetLogin} msg={messeger}
+                  password={password} login={login} setLogin={isUser} setPassword={isPass} GetLogin={GetLogin}
                 />
             ) : (
                 <Home user={user} />
