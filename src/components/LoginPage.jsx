@@ -1,5 +1,4 @@
 import React from "react"
-import Messeger from "./Msg"
 
 const Login = ({setLogin, setPassword, login, password, GetLogin, color}) => {
     return (
