@@ -81,12 +81,12 @@ const Card = ({ produto, user }) => {
     }
 
     return (
-        <div className="flex flex-col justify-start items-start gap-2 w-full h-60 bg-white rounded-lg p-3 shadow relative">
+        <div className="flex flex-col justify-start items-start gap-2 w-full h-64 bg-white rounded-lg p-3 shadow relative">
             <div className={`rounded-lg ${display === true ? "absolute" : "hidden"} top-10 left-10 w-auto p-2 ${ msg === "Enviada com sucesso!" ? "bg-green-600" : "bg-red-600"} text-white`}>
                 {msg}
             </div>
             <div className="flex justify-start items-start w-full h-auto">
-                <span className="text-base lg:text-lg font-bold">
+                <span className="text-base lg:text-lg font-bold p-2">
                     {produto.produto}
                 </span>
             </div>

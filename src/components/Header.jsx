@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi";
 
 const Header = ({nome, foto}) => {
     return (
-        <div className="flex flex-col justify-center items-center w-full h-auto bg-blue-950 p-5 text-white">
+        <div className="flex flex-col justify-center items-center w-full h-auto bg-blue-950 p-5 pt-3 text-white">
             <div className="flex justify-between items-center w-full lg:w-10/12 h-auto">
                 <span className="text-lg lg:text-2xl">HUB do MKT</span>
                 <div className="flex justify-center items-center gap-3">
