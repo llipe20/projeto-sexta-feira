@@ -10,7 +10,7 @@ const Main = ({produtos, user}) => {
             <div className="grid grid-cols-1 lg:grid-cols-3 grid-rows-2 justify-center items-center gap-5 rounded-lg w-full h-auto">
                 {
                     produtos.map(trade => (
-                        <Card produto={trade} user={user} />
+                        <Card produto={trade} user={user} type={'origin'} />
                     ))
                 }
             </div>

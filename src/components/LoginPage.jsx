@@ -1,8 +1,12 @@
 import React from "react"
 
-const Login = ({setLogin, setPassword, login, password, GetLogin, color}) => {
+const Login = ({setLogin, setPassword, login, password, GetLogin, display, msg}) => {
+
     return (
-        <div className="flex justify-center items-center w-full min-h-screen lg:bg-blue-950">
+        <div className="flex justify-center items-center w-full min-h-screen lg:bg-blue-950 relative">
+            <div className={`rounded-lg ${display === true ? "absolute" : "hidden"} top-10 left-10 w-auto p-2 bg-red-600 text-white`}>
+                {msg}
+            </div>
             <div className="flex flex-col justify-evenly items-center w-full lg:w-1/3 h-96 lg:bg-gray-200 rounded-lg lg:shadow">
                 <img src="Logo Discar-08.png" alt="logo-discar" className="w-40" />
                 <form onSubmit={GetLogin} className="flex flex-col justify-center items-center gap-7 w-full">
@@ -11,7 +15,8 @@ const Login = ({setLogin, setPassword, login, password, GetLogin, color}) => {
                         className="w-3/4 h-12 pl-3 border-0 outline-0 rounded-lg bg-white shadow" 
                         placeholder="Insira seu usuário"
                         onChange={(e) => setLogin(e.target.value)}
-                        value={login}     
+                        value={login} 
+                        autoFocus    
                     />
                     <input 
                         type="text" 

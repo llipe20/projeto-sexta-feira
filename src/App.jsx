@@ -8,11 +8,13 @@ function App() {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [user, setUser] = useState({})
+    const [display, setDisplay] = useState(false)
+    const [msg, setMsg] = useState('')
 
     const GetLogin = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         const req = await fetch('https://json-server-rho-brown.vercel.app/usuarios')
-        const res = await req.json();
+        const res = await req.json()
         const usuario = res.find(u => u.login === login)
 
         if(usuario !== undefined) {
@@ -20,10 +22,24 @@ function App() {
             setIsLogin(true)
             setUser(usuario)
           } else {
+            setMsg('Senha incorreta!')
+            setDisplay(true)
+            const relogio = setTimeout(() => {
+                setDisplay(false)
+                setMsg('')
+                clearInterval(relogio)
+            }, 2000)
             console.log('Senha errada')
           }
         } else {
-          console.log('Usuario inexistente')
+            console.log('Usuario inexistente')
+            setMsg('Usuário errado!')
+            setDisplay(true)
+            const relogio = setTimeout(() => {
+                setDisplay(false)
+                setMsg('')
+                clearInterval(relogio)
+            }, 2000)
         }
     }
 
@@ -46,10 +62,10 @@ function App() {
           {
             !isLogin ? (
                 <Login
-                  password={password} login={login} setLogin={isUser} setPassword={isPass} GetLogin={GetLogin}
+                  password={password} login={login} setLogin={isUser} setPassword={isPass} GetLogin={GetLogin} display={display} msg={msg}
                 />
             ) : (
-                <Home user={user} />
+                <Home user={user} display={display} msg={msg} />
             )
           }
       </div>
